@@ -6,6 +6,12 @@
   "background": {
     "service_worker": "background.js"
   },
+  "content_scripts": [{
+    "matches": ["https://eikaiwa.dmm.com/*"],
+    "js": [
+      "content.js"
+    ]
+  }],
   "permissions": [
     "storage",
     "activeTab",
