@@ -5,12 +5,14 @@ chrome.storage.sync.get("color", ({ color }) => {
   changeColor.style.backgroundColor = color;
 });
 
-let timeColumns = document.querySelector(".time")
-for(var i=0; i<timeColumns.childElementCount; i++ ) {
-  var timeElement = timeColumns.children[i].firstChild;
-  var timeText = timeElement.textContent;
-  timeElement.textContent = timeElement.textContent + getLocalTimezondeDateString(timeText.replace("-", ""))
-}
+let timeColumnsList = document.querySelectorAll(".time");
+timeColumnsList.forEach((timeColumns) => {
+  for(var i=0; i<timeColumns.childElementCount; i++ ) {
+    var timeElement = timeColumns.children[i].firstChild;
+    var timeText = timeElement.textContent;
+    timeElement.textContent = timeElement.textContent + getLocalTimezondeDateString(timeText.replace("-", ""))
+  } 
+});
 
 function getJSTCurrentDateString() {
   var currentDate = new Date(Date.now());
