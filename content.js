@@ -18,11 +18,10 @@ function getJSTCurrentDateString() {
   var currentDate = new Date(Date.now());
   options = {
     year: 'numeric', month: 'numeric', day: 'numeric',
-    hour: 'numeric', minute: 'numeric',
     hour12: false,
     timeZone: 'Asia/Tokyo'
   };
-  return new Intl.DateTimeFormat('ja-JP', options).format(currentDate).split(" ")[0];
+  return new Intl.DateTimeFormat('ja-JP', options).format(currentDate);
 }
 
 function getLocalTimezondeDateString(jstHHMMString) {
